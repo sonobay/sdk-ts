@@ -5,7 +5,9 @@ import { apiEndpoint } from "./utils";
  * Devices Handler
  * @param chainId 1 for mainnet, 11155111 for Sepolia testnet
  */
-export const devices = async ({ chainId = 1 }: { chainId?: 1 | 11155111 }) => {
+export const devices = (params?: { chainId: 1 | 11155111 }) => {
+  const chainId = params?.chainId || 1;
+
   /**
    * Fetches a single device by id
    * @param id Device id

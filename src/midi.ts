@@ -3,7 +3,9 @@
 import { MIDI } from "./types";
 import { apiEndpoint, useNftStorageUrl } from "./utils";
 
-export const midi = async ({ chainId }: { chainId: 1 | 11155111 }) => {
+export const midi = (params?: { chainId: 1 | 11155111 }) => {
+  const chainId = params?.chainId || 1;
+
   const fetchOne = async ({ id }: { id: number }) => {
     const res = await fetch(`${apiEndpoint(chainId)}/midi/${id}`);
     if (!res.ok) {
