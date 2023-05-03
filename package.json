@@ -1,0 +1,31 @@
+{
+  "name": "@sonobay/sdk-ts",
+  "version": "0.0.1",
+  "description": "",
+  "exports": {
+    ".": "./lib/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf lib",
+    "prebuild": "npm run clean",
+    "build": "npx tsc",
+    "preversion": "npm run build",
+    "postversion": "git push --follow-tags",
+    "prepack": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "rimraf": "^5.0.0",
+    "typescript": "^5.0.4"
+  },
+  "type": "module",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
