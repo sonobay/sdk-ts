@@ -1,6 +1,6 @@
 {
-  "name": "@sonobay/sdk-ts",
-  "version": "0.0.2",
+  "name": "@sonobay/sdk",
+  "version": "0.0.1",
   "description": "",
   "exports": {
     ".": "./lib/index.js"
