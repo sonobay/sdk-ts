@@ -1,5 +1,3 @@
-// export interface Midi {}
-
 import { MIDI } from "./types";
 import { apiEndpoint, useNftStorageUrl } from "./utils";
 

@@ -1,17 +1,29 @@
 {
   "name": "@sonobay/sdk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
+  "main": "./lib/cjs/index.js",
   "exports": {
-    ".": "./lib/index.js"
+    ".": {
+      "import": {
+        "types": "./lib/esm/types/index.d.ts",
+        "default": "./lib/esm/index.mjs"
+      },
+      "require": {
+        "types": "./lib/cjs/types/index.d.ts",
+        "default": "./lib/cjs/index.js"
+      }
+    }
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rimraf lib",
     "prebuild": "npm run clean",
-    "build": "npx tsc",
     "preversion": "npm run build",
     "postversion": "git push --follow-tags",
+    "clean": "rm -rf ./lib",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -p ./configs/tsconfig.esm.json && mv lib/esm/index.js lib/esm/index.mjs",
+    "build:cjs": "tsc -p ./configs/tsconfig.cjs.json",
     "prepack": "npm run build"
   },
   "author": "",
@@ -21,7 +33,7 @@
     "typescript": "^5.0.4"
   },
   "type": "module",
-  "types": "./lib/index.d.ts",
+  "types": "./lib/cjs/types/index.d.ts",
   "files": [
     "lib/**/*"
   ],
