@@ -1,5 +1,5 @@
-import { Device } from "./types";
-import { apiEndpoint } from "./utils";
+import { Device } from "./types/index.js";
+import { apiEndpoint } from "./utils/index.js";
 
 /**
  * Devices Handler

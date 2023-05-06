@@ -1,5 +1,5 @@
-import { MIDI } from "./types";
-import { apiEndpoint, useNftStorageUrl } from "./utils";
+import { MIDI } from "./types/index.js";
+import { apiEndpoint, useNftStorageUrl } from "./utils/index.js";
 
 export const midi = (params?: { chainId: 1 | 11155111 }) => {
   const chainId = params?.chainId || 1;

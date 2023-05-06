@@ -1,4 +1,4 @@
-import { MIDI } from "../types";
+import { MIDI } from "../types/index.js";
 
 export const useNftStorageUrl = (midi: MIDI) => {
   midi.metadata.image = midi.metadata.image.replace(
