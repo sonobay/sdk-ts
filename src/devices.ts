@@ -1,6 +1,5 @@
-import { Device } from "./types";
-import { apiEndpoint } from "./utils";
-import fetch from "node-fetch";
+import { Device } from "./types/index.js";
+import { apiEndpoint } from "./utils/index.js";
 
 /**
  * Devices Handler
