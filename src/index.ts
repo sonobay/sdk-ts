@@ -1,3 +1,3 @@
-export * from "./devices.js";
-export * from "./midi.js";
-export * from "./types/index.js";
+export * from "./devices";
+export * from "./midi";
+export * from "./types";

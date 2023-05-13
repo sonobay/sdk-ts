@@ -1,5 +1,6 @@
-import { MIDI } from "./types/index.js";
-import { apiEndpoint, useNftStorageUrl } from "./utils/index.js";
+import { MIDI } from "./types";
+import { apiEndpoint, useNftStorageUrl } from "./utils";
+import fetch from "node-fetch";
 
 export const midi = (params?: { chainId: 1 | 11155111 }) => {
   const chainId = params?.chainId || 1;
@@ -29,7 +30,7 @@ export const midi = (params?: { chainId: 1 | 11155111 }) => {
     deviceId?: string;
     search?: string;
   }) => {
-    const url = new URL(`${apiEndpoint}/midi`);
+    const url = new URL(`${apiEndpoint(chainId)}/midi`);
     const queryParams = new URLSearchParams();
 
     /**
