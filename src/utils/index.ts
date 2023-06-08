@@ -21,7 +21,18 @@ export const useNftStorageUrl = (midi: MIDI) => {
 };
 
 export const apiEndpoint = (chainId: number) => {
-  return chainId === 11155111
-    ? "https://marketplace-api-goerli.onrender.com"
-    : "";
+  switch (chainId) {
+    // Sepolia
+    case 11155111:
+      return "https://marketplace-api-goerli.onrender.com";
+
+    // Polygon Mumbai
+    case 80001:
+      return "https://marketplace-api-mumbai.onrender.com";
+
+    default:
+      return "";
+  }
 };
+
+export type ChainOptions = 1 | 11155111 | 80001 | 137;

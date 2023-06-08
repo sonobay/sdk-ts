@@ -1,11 +1,11 @@
 import { Device } from "./types/index.js";
-import { apiEndpoint } from "./utils/index.js";
+import { ChainOptions, apiEndpoint } from "./utils/index.js";
 
 /**
  * Devices Handler
- * @param chainId 1 for mainnet, 11155111 for Sepolia testnet
+ * @param chainId Chain id
  */
-export const devices = (params?: { chainId: 1 | 11155111 }) => {
+export const devices = (params?: { chainId: ChainOptions }) => {
   const chainId = params?.chainId || 1;
 
   /**
