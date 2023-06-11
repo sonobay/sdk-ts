@@ -30,6 +30,10 @@ export const apiEndpoint = (chainId: number) => {
     case 80001:
       return "https://marketplace-api-mumbai.onrender.com";
 
+    // Polygon Mainnet
+    case 137:
+      return "https://marketplace-api-polygon.onrender.com";
+
     default:
       return "";
   }
