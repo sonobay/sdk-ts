@@ -30,7 +30,7 @@ export const midi = (params?: { chainId: ChainOptions }) => {
     deviceId?: string;
     search?: string;
   }) => {
-    const url = new URL(`${apiEndpoint}/midi`);
+    const url = new URL(`${apiEndpoint(chainId)}/midi`);
     const queryParams = new URLSearchParams();
 
     /**
